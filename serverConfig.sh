@@ -9,7 +9,7 @@ read  ID
 #defaults -currentHost write com.apple.screensaver idelTime 0
 
 #gets temp folder
-var temp_install = '~/Desktop/temp_install'
+$temp_install = '~/Desktop/temp_install'
 if [[ $ID -gt 101 ]]
 then
     cp -R /Volumes/share/All_City/-\ mBox\ files\ for\ install/Server\ Install $temp_install
