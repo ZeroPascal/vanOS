@@ -18,12 +18,8 @@ else
 fi
 
 
-defaults write com.apple.dock persistent-apps {
-        GUID = 3213084235;
-        "tile-data" =         {
-            book = {length = 608, bytes = 0x626f6f6b 60020000 00000410 30000000 ... 04000000 00000000 };
-            "bundle-identifier" = "com.apple.systempreferences";
-            "dock-extra" = 1;
+defaults write com.apple.dock persistent-apps ''
+defaults write com.apple.dock persistent-apps -array-add '({GUID = 3213084235; "tile-data" = {book = {length = 608, bytes = 0x626f6f6b 60020000 00000410 30000000 ... 04000000 00000000 };"bundle-identifier" = "com.apple.systempreferences"; "dock-extra" = 1;
             "file-data" =             {
                 "_CFURLString" = "file:///System/Applications/System%20Preferences.app/";
                 "_CFURLStringType" = 15;
@@ -34,10 +30,10 @@ defaults write com.apple.dock persistent-apps {
             "parent-mod-date" = 3686918753;
         };
         "tile-type" = "file-tile";
-    }
+    });'
 
 
-defaults write com.apple.dock persistent-others {}
+defaults write com.apple.dock persistent-others ''
 
 killall Dock
 
