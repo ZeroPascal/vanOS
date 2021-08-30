@@ -18,7 +18,7 @@ else
 fi
 
 
-defaults write com.apple.dock persistent-apps ({
+defaults write com.apple.dock persistent-apps {
         GUID = 3213084235;
         "tile-data" =         {
             book = {length = 608, bytes = 0x626f6f6b 60020000 00000410 30000000 ... 04000000 00000000 };
@@ -35,9 +35,11 @@ defaults write com.apple.dock persistent-apps ({
         };
         "tile-type" = "file-tile";
     }
-)
 
-defaults write com.apple.dock persistent-others ({})
+
+defaults write com.apple.dock persistent-others {}
+
+killall Dock
 
 
 
