@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Starting vanOS Config!"
+open 'smb://pi:1123H@192.168.11.230/share'
 echo "Enter Server ID"
 read ID
 echo "Server ID $ID"
@@ -8,7 +9,7 @@ echo "Server ID $ID"
 defaults -currentHost write com.apple.screensaver idelTime 0
 
 #gets temp folder
-open 'smb://pi:1123H@192.168.11.230/share'
+
 if [$ID -gt 101]
 then
     cp -R /Volumes/share/All_City/-\ mBox\ files\ for\ install/Server\ Install ~/Desktop/temp_install
@@ -26,12 +27,12 @@ fi
 #defaults -currentHost write com.apple.notificationcenterui dndStart 1320
 #defaults -currentHost write com.apple.notificationcenterui doNotDistrub 0
 
-
-echo "Done y/n?"
-select yn in "Yes" "No"; do
+while true; do
+    read -p "Done?" yn
     case $yn in
-        Yes ) diskutil unmount /Volumes/share; rm -rf ~/Desktop/temp;;
-        No) echo 'Okay...';;
+        [Yy]* ) diskutil unmount /Volumes/share; rm -rf ~/Desktop/temp; break;;
+        [Ny]*) echo 'Okay...'; exit;;
+        *) echo "Please answer yes or no"
     esac
 done
 
