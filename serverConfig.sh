@@ -28,9 +28,10 @@ fi
 
 
 echo "Done y/n?"
-read done_yn
-case $done_yn
-    y) diskutil unmount /Volumes/share && rm -rf ~/Desktop/temp
-    n) echo 'Okay...'
-esac
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) diskutil unmount /Volumes/share; rm -rf ~/Desktop/temp;;
+        No) echo 'Okay...';;
+    esac
+done
 
