@@ -17,9 +17,9 @@ else
     cp -R /Volumes/share/All_City/-\ mBox\ files\ for\ install/Server\ 101\ Install ~/Desktop/temp_install
 fi
 
-sudo 
 
-sudo hdiutil attach ~/Desktop/temp_install/mBox\ Software/Mbox-Studio-v443-r10342.dmg
+
+hdiutil attach ~/Desktop/temp_install/mBox\ Software/Mbox-Studio-v443-r10342.dmg
 
 #sudo installer -package /Volumes/Mbox-Studio-v443-r10342/Mbox-Studio-v443-r10342.pkg -target /
 
