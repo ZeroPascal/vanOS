@@ -18,12 +18,31 @@ else
 fi
 
 
+defaults write com.apple.dock persistent-apps ({
+        GUID = 3213084235;
+        "tile-data" =         {
+            book = {length = 608, bytes = 0x626f6f6b 60020000 00000410 30000000 ... 04000000 00000000 };
+            "bundle-identifier" = "com.apple.systempreferences";
+            "dock-extra" = 1;
+            "file-data" =             {
+                "_CFURLString" = "file:///System/Applications/System%20Preferences.app/";
+                "_CFURLStringType" = 15;
+            };
+            "file-label" = "System Preferences";
+            "file-mod-date" = 3674274208;
+            "file-type" = 41;
+            "parent-mod-date" = 3686918753;
+        };
+        "tile-type" = "file-tile";
+    }
+)
 
-hdiutil attach ~/Desktop/temp_install/mBox\ Software/Mbox*.dmg
 
-installer -pkg /Volumes/Mbox\ Studio\ v4.4.3\ r10342/*.pkg -target /Applications
 
-hdiutil detach /Volumes/Mbox*
+#Mount and Install Mbox
+#hdiutil attach ~/Desktop/temp_install/mBox\ Software/Mbox*.dmg
+#installer -pkg /Volumes/Mbox\ Studio\ v4.4.3\ r10342/*.pkg -target /Applications
+#hdiutil detach /Volumes/Mbox*
 
 # Do Not Disturb
 #defaults -currentHost write com.apple.notificationcenterui dndEnd 1319
@@ -38,4 +57,5 @@ while true; do
         *) echo "Please answer yes or no"
     esac
 done
+
 
