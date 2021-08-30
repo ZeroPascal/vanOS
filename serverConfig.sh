@@ -11,9 +11,11 @@ defaults -currentHost write com.apple.screensaver idelTime 0
 open 'smb://pi:1123H@192.168.11.230/share'
 if [$ID -gt 101]
 then
-    cp -R /Volumes/share/Server_Install_Folders/Server_Install ~/Desktop/temp_install
+    cp -R /Volumes/share/All_City/-\ mBox\ files\ for\ install/Server\ Install ~/Desktop/temp_install
+    
+
 else
-    cp -R ~/Volumes/share/Server_Install_Folders/Server_101_Install ~/Desktop/temp_install
+    cp -R /Volumes/share/All_City/-\ mBox\ files\ for\ install/Server\ 101\ Install ~/Desktop/temp_install
 fi
 
 
@@ -28,7 +30,7 @@ fi
 echo "Done y/n?"
 read done_yn
 case $done_yn
-    y ) diskutil unmount /Volumes/share && rm -rf ~/Desktop/temp
+    y) diskutil unmount /Volumes/share && rm -rf ~/Desktop/temp
     n) echo 'Okay...'
 esac
 
