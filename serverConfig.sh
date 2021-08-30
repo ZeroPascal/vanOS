@@ -19,11 +19,11 @@ fi
 
 
 
-hdiutil attach ~/Desktop/temp_install/mBox\ Software/Mbox-Studio-v443-r10342.dmg
+hdiutil attach ~/Desktop/temp_install/mBox\ Software/Mbox*.dmg
 
-installer -package /Volumes/Mbox-Studio-v443-r10342/Mbox-Studio-v443-r10342.pkg -target /
+installer -package /Volumes/Mbox*.pkg -target /
 
-hdiutil detach /Volumes/Mbox-*
+hdiutil detach /Volumes/Mbox*
 
 # Do Not Disturb
 #defaults -currentHost write com.apple.notificationcenterui dndEnd 1319
