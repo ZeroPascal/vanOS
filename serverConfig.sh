@@ -3,14 +3,14 @@ echo "Starting vanOS Config!"
 open 'smb://pi:1123H@192.168.11.230/share'
 echo "Enter Server ID"
 read ID
-echo "Server ID $ID"
+#echo "Server ID $ID"
 
 # Screen Saver Off
 #defaults -currentHost write com.apple.screensaver idelTime 0
 
 #gets temp folder
 
-if [$ID -gt 101]
+if [[$ID -gt 101]]
 then
     cp -R /Volumes/share/All_City/-\ mBox\ files\ for\ install/Server\ Install ~/Desktop/temp_install
 else
