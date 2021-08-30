@@ -37,6 +37,8 @@ defaults write com.apple.dock persistent-apps ({
     }
 )
 
+defaults write com.apple.dock persistent-others ({})
+
 
 
 #Mount and Install Mbox
