@@ -9,17 +9,21 @@ read  ID
 #defaults -currentHost write com.apple.screensaver idelTime 0
 
 #gets temp folder
-$temp_install = ~/Desktop/temp_install
+
 if [[ $ID -gt 101 ]]
 then
-    cp -R /Volumes/share/All_City/-\ mBox\ files\ for\ install/Server\ Install $temp_install
+    cp -R /Volumes/share/All_City/-\ mBox\ files\ for\ install/Server\ Install ~/Desktop/temp_install
 else
-    cp -R /Volumes/share/All_City/-\ mBox\ files\ for\ install/Server\ 101\ Install $temp_install
+    cp -R /Volumes/share/All_City/-\ mBox\ files\ for\ install/Server\ 101\ Install ~/Desktop/temp_install
 fi
 
 sudo 
 
+sudo hdiutil attach ~/Desktop/temp_install/mBox\ Software/Mbox-Studio-v443-r10342.dmg
 
+#sudo installer -package /Volumes/Mbox-Studio-v443-r10342/Mbox-Studio-v443-r10342.pkg -target /
+
+#sudo hdiutil detach /Volumes/Mbox-*
 
 # Do Not Disturb
 #defaults -currentHost write com.apple.notificationcenterui dndEnd 1319
@@ -29,7 +33,7 @@ sudo
 while true; do
     read -p "Done?" yn
     case $yn in
-        [Yy]* ) diskutil unmount /Volumes/share; rm -rf $temp_install; break;;
+        [Yy]* ) diskutil unmount /Volumes/share; rm -rf ~/Desktop/temp_install; break;;
         [Ny]*) echo 'Okay...'; exit;;
         *) echo "Please answer yes or no"
     esac
