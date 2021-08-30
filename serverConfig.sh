@@ -6,15 +6,13 @@ read ID
 echo "Server ID $ID"
 
 # Screen Saver Off
-defaults -currentHost write com.apple.screensaver idelTime 0
+#defaults -currentHost write com.apple.screensaver idelTime 0
 
 #gets temp folder
 
 if [$ID -gt 101]
 then
     cp -R /Volumes/share/All_City/-\ mBox\ files\ for\ install/Server\ Install ~/Desktop/temp_install
-    
-
 else
     cp -R /Volumes/share/All_City/-\ mBox\ files\ for\ install/Server\ 101\ Install ~/Desktop/temp_install
 fi
@@ -30,7 +28,7 @@ fi
 while true; do
     read -p "Done?" yn
     case $yn in
-        [Yy]* ) diskutil unmount /Volumes/share; rm -rf ~/Desktop/temp; break;;
+        [Yy]* ) diskutil unmount /Volumes/share; rm -rf ~/Desktop/temp_install; break;;
         [Ny]*) echo 'Okay...'; exit;;
         *) echo "Please answer yes or no"
     esac
