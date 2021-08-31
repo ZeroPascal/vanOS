@@ -17,9 +17,25 @@ else
     cp -R /Volumes/share/All_City/mBox_Installs/Server\ 101\ Install ~/Desktop/temp_install
 fi
 
+#Desktop Image Moved
 cp ~/Desktop/temp_install/Desktop\ Backgrounds/server\ $ID.png ~/Pictures
+
+#Computer Name
 scutil --set ComputerName mbox $ID
-scutil --set LocalHostName mbox-$ID
+scutil --set LocalHostName mbox $ID
+
+#Disk Name
+disktuil rename / mbox\ $ID
+
+#File Share
+#AFP
+launchctl load -w /System/Library/LaunchDaemons/com.apple.AppleFileServer.plist
+#SMB
+launchctl load -w /System/Library/LaunchDaemons/com.apple.smbd.plist
+
+networksetup -setmanual 'Ethernet 2' 192.168.15.$ID 255.255.255.0
+networksetup -setmanual 'Ethernet 1' 192.168.11.$ID 255.255.255.0
+networksetup -setnetworkserviceenabled 'Wi-Fi' off
 
 #Mount and Install Mbox
 #hdiutil attach ~/Desktop/temp_install/mBox\ Software/Mbox*.dmg
