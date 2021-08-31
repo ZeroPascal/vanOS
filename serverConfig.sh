@@ -12,32 +12,14 @@ read  ID
 
 if [[ $ID -gt 101 ]]
 then
-    cp -R /Volumes/share/All_City/-\ mBox\ files\ for\ install/Server\ Install ~/Desktop/temp_install
+    cp -R /Volumes/share/All_City/mBox_Installs/Server\ Install ~/Desktop/temp_install
 else
-    cp -R /Volumes/share/All_City/-\ mBox\ files\ for\ install/Server\ 101\ Install ~/Desktop/temp_install
+    cp -R /Volumes/share/All_City/mBox_Installs/Server\ 101\ Install ~/Desktop/temp_install
 fi
 
-
-defaults delete com.apple.dock persistent-apps
-defaults write com.apple.dock persistent-apps -array-add '{GUID = 3213084235; "tile-data" = {book = {length = 608, bytes = 0x626f6f6b 60020000 00000410 30000000 ... 04000000 00000000 };"bundle-identifier" = "com.apple.systempreferences"; "dock-extra" = 1;
-            "file-data" =             {
-                "_CFURLString" = "file:///System/Applications/System%20Preferences.app/";
-                "_CFURLStringType" = 15;
-            };
-            "file-label" = "System Preferences";
-            "file-mod-date" = 3674274208;
-            "file-type" = 41;
-            "parent-mod-date" = 3686918753;
-        };
-        "tile-type" = "file-tile";
-    };'
-
-
-defaults delete com.apple.dock persistent-others
-
-killall Dock
-
-
+cp ~/Desktop/temp_install/Desktop\ Backgrounds/server\ {$ID}.png ~/Pictures
+scutil --set ComputerName mbox {$ID}
+scutil --set LocalHostName mbox-{$ID}
 
 #Mount and Install Mbox
 #hdiutil attach ~/Desktop/temp_install/mBox\ Software/Mbox*.dmg
