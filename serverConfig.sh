@@ -75,7 +75,7 @@ networksetup -setmanual 'Ethernet 1' 192.168.11.$ID 255.255.255.0
 while true; do
     read -p 'Restart?' yn
     case $yn in
-    [Yn]*) reboot; break;;
+    [Yy]*) reboot; break;;
     [Nn]*) exit;;
     esac
 done

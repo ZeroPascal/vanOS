@@ -52,7 +52,7 @@ defaults -currentHost write "com.apple.finder" "ShowHardDrivesOnDesktop" '1'
 #Show Mounted Servers
 defaults -currentHost write "com.apple.finder" "ShowMountedServersOnDesktop" '1'
 
-defaults -currentHostwrite "com.apple.finder" "DesktopViewSettings" 
+defaults -currentHost write "com.apple.finder" "DesktopViewSettings" 
 
 #Bluetooth Off
 defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState 0
