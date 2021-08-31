@@ -17,9 +17,9 @@ else
     cp -R /Volumes/share/All_City/mBox_Installs/Server\ 101\ Install ~/Desktop/temp_install
 fi
 
-cp ~/Desktop/temp_install/Desktop\ Backgrounds/server\ {$ID}.png ~/Pictures
-scutil --set ComputerName mbox {$ID}
-scutil --set LocalHostName mbox-{$ID}
+cp ~/Desktop/temp_install/Desktop\ Backgrounds/server\ $ID.png ~/Pictures
+scutil --set ComputerName mbox $ID
+scutil --set LocalHostName mbox-$ID
 
 #Mount and Install Mbox
 #hdiutil attach ~/Desktop/temp_install/mBox\ Software/Mbox*.dmg
