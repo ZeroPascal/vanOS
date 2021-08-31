@@ -53,7 +53,7 @@ while true; do
     esac
 done
 
-[! -d "/Applications/Mbox"] && echo 'Liar'
+[[! -d "/Applications/Mbox"]] && echo 'Liar'
 
 #installer -pkg /Volumes/Mbox\ Studio\ v4.4.3\ r10342/*.pkg -target /Applications
 # hdiutil detach /Volumes/Mbox*
@@ -65,6 +65,8 @@ done
 
 
 #Unmount Shared
+echo ' '
+echo 'Cleaning Up'
 diskutil unmount /Volumes/share
 rm -rf ~/Desktop/temp_install
 
@@ -75,13 +77,10 @@ networksetup -setmanual 'Ethernet 1' 192.168.11.$ID 255.255.255.0
 while true; do
     read -p 'Restart?' yn
     case $yn in
-    [Yy]*) reboot; break;;
+    [Yy]) reboot; break;;
     [Nn]*) exit;;
     esac
 done
-
-break
-
 
 
 

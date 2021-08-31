@@ -46,6 +46,9 @@ defaults -currentHost write "com.apple.systemuiserver" "menuExtras" '("/System/L
 defaults -currentHost delete "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.bluetooth"
 
 #--Finder--
+echo 'Finder/ Desktop Settings'
+sleep 2
+
 #Show HD
 defaults -currentHost write "com.apple.finder" "ShowHardDrivesOnDesktop" '1'
 
