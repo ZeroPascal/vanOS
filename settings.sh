@@ -45,6 +45,8 @@ defaults -currentHost write "com.apple.systemuiserver" "NSStatusItem Visible com
 #Bluetooth Menu Bar
 defaults -currentHost write "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.bluetooth" 0
 
+#Clear Rest of Menu Bar
+defaults -curentHost write "com.apple.systemuiserver" "menuExtras" '"System/Library/CoreServices/Menue Extras/Clock.menu"'
 #--Finder--
 echo 'Finder/ Desktop Settings'
 sleep 2
@@ -58,7 +60,7 @@ defaults -currentHost write "com.apple.finder" "ShowMountedServersOnDesktop" '1'
 defaults -currentHost write "com.apple.finder" "DesktopViewSettings" 
 
 #Bluetooth Off
-defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState 0
+defaults write /Library/Preferences/com.apple.Bluetooth "ControllerPowerState" "0"
 
 #Snap to Grid
 defaults -currentHost write "com.apple.finder" "DesktopViewSettings" '<dict><key>IconViewSettings</key><dict><key>arrangeBy</key><string>grid</string><key>backgroundColorGreen</key><string>1</string><key>backgroundColorRed</key><string>1</string><key>backgroundColorBlue</key><string>1</string><key>backgroundType</key><string>0</string><key>gridOffsetX</key><string>0</string><key>gridOffsetY</key><string>0</string><key>gridSpacing</key><string>54</string><key>iconSize</key><string>54</string><key>labelOnBottom</key><string>1</string><key>showIconPreview</key><string>1</string><key>showItemInfo</key><string>0</string><key>textSize</key><string>12</string><key>viewOptionsVersion</key><string>1</string></dict></dict>'
