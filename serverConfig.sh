@@ -28,7 +28,7 @@ echo "Setting Computer Name"
 scutil --set ComputerName mbox\ $ID
 sleep 3
 echo "Setting Host Name"
-scutil --set LocalHostName mbox\ $ID
+scutil --set LocalHostName mbox-$ID
 sleep 3
 
 #Disk Name

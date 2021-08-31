@@ -27,7 +27,7 @@ defaults -currentHost write "Apple Global Domain" "com.apple.sound.uiaudio.enabl
 defaults -currentHost write "Apple Global Domain" "com.apple.sound.beep.volume" '0'
 
 #Remove Sound Icon from Menu Bar
-defaults -currentHost delete "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.volume"
+defaults -currentHost write "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.volume" 0
 
 #Keyboard Flag
 defaults -currentHost write "com.apple.TextInputMenu" "visible" "0"
@@ -39,11 +39,11 @@ defaults -currentHost write "com.apple.TextInputMenu" "visible" "0"
 defaults -currentHost write "com.apple.airplay" "showInMenuBarIfPresent" '0'
 
 #Wifi Icon 
-defaults -currentHost delete "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.airport"
+defaults -currentHost write "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.airport" 0
 #defaults -currentHost write "com.apple.systemuiserver" "menuExtras" '("/System/Library/CoreServices/Menu Extras/Clock.menu",)'
 
 #Bluetooth Menu Bar
-defaults -currentHost delete "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.bluetooth"
+defaults -currentHost write "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.bluetooth" 0
 
 #--Finder--
 echo 'Finder/ Desktop Settings'
