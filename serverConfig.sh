@@ -33,9 +33,15 @@ launchctl load -w /System/Library/LaunchDaemons/com.apple.AppleFileServer.plist
 #SMB
 launchctl load -w /System/Library/LaunchDaemons/com.apple.smbd.plist
 
+#Static IPs
 networksetup -setmanual 'Ethernet 2' 192.168.15.$ID 255.255.255.0
 networksetup -setmanual 'Ethernet 1' 192.168.11.$ID 255.255.255.0
-networksetup -setnetworkserviceenabled 'Wi-Fi' off
+
+#Wi-Fi Off
+networksetup -setairportpower en2 off
+
+#Bluetooth Off
+sudo defaults write  /Library/Preferences/com.apple.Bluetooth ControllerPowerState 0
 
 #Mount and Install Mbox
 #hdiutil attach ~/Desktop/temp_install/mBox\ Software/Mbox*.dmg
