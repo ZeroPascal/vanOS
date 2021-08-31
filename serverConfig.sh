@@ -59,7 +59,7 @@ while true; do
     esac
 done
 
-[[! /Applications/Mbox]] && echo 'Liar'
+#[[! /Applications/Mbox]] && echo 'Liar'
 
 #installer -pkg /Volumes/Mbox\ Studio\ v4.4.3\ r10342/*.pkg -target /Applications
 # hdiutil detach /Volumes/Mbox*

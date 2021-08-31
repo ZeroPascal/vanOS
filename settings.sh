@@ -3,9 +3,9 @@ echo ' '
 echo 'Settings'
 echo ' '
 #clears dock
-defaults write "com.apple.dock" "persistent-apps" '()'
+defaults -host prg write "com.apple.dock" "persistent-apps" '()'
 
-defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/System/Applications/System Preferences.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+defaults -host prg write "com.apple.dock persistent-apps" -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/System/Applications/System Preferences.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
 
 
 #kills dock
@@ -29,10 +29,10 @@ defaults -currentHost write "Apple Global Domain" "com.apple.sound.uiaudio.enabl
 defaults -currentHost write "Apple Global Domain" "com.apple.sound.beep.volume" '0'
 
 #Remove Sound Icon from Menu Bar
-defaults -currentHost write "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.volume" 0
+defaults -host prg write "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.volume" "0"
 
 #Keyboard Flag
-defaults -currentHost write "com.apple.TextInputMenu" "visible" "0"
+defaults -host prg write "com.apple.TextInputMenu" "visible" "0"
 
 #Energy
 #defaults -currentHost write "com.apple.systempreferences" "com.apple.preferences.energysaver" '{hasBeenWarnedAboutEnergyUsage=YES;}'
@@ -41,16 +41,16 @@ defaults -currentHost write "com.apple.TextInputMenu" "visible" "0"
 defaults -currentHost write "com.apple.airplay" "showInMenuBarIfPresent" '0'
 
 #Wifi Icon 
-defaults -host prg write "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.airport" 0
+defaults -host prg write "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.airpot" "0"
 #defaults -currentHost write "com.apple.systemuiserver" "menuExtras" '("/System/Library/CoreServices/Menu Extras/Clock.menu",)'
 
 #Bluetooth Menu Bar
-defaults -host prg write "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.bluetooth" 0
+defaults -host prg write "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.bluetooth" "0"
 
 #Clear Rest of Menu Bar
-defaults -host prg write "com.apple.systemuiserver" "menuExtras" '"System/Library/CoreServices/Menue Extras/Clock.menu"'
+defaults -host prg write "com.apple.systemuiserver" "menuExtras" '("System/Library/CoreServices/Menue Extras/Clock.menu")'
 #--Finder--
-echo 'Finder/ Desktop Settings'
+echo 'Finder/Desktop Settings'
 sleep 2
 
 #Show HD
