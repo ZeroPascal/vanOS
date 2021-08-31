@@ -46,7 +46,7 @@ defaults -currentHost write "com.apple.systemuiserver" "NSStatusItem Visible com
 defaults -currentHost write "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.bluetooth" 0
 
 #Clear Rest of Menu Bar
-defaults -curentHost write "com.apple.systemuiserver" "menuExtras" '"System/Library/CoreServices/Menue Extras/Clock.menu"'
+defaults -currentHost write "com.apple.systemuiserver" "menuExtras" '"System/Library/CoreServices/Menue Extras/Clock.menu"'
 #--Finder--
 echo 'Finder/ Desktop Settings'
 sleep 2
