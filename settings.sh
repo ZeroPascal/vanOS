@@ -1,5 +1,7 @@
 #!/bin/bash
-
+echo ' '
+echo 'Settings'
+echo ' '
 #clears dock
 defaults write "com.apple.dock" "persistent-apps" '()'
 
@@ -39,14 +41,14 @@ defaults -currentHost write "com.apple.TextInputMenu" "visible" "0"
 defaults -currentHost write "com.apple.airplay" "showInMenuBarIfPresent" '0'
 
 #Wifi Icon 
-defaults -currentHost write "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.airport" 0
+defaults -host prg write "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.airport" 0
 #defaults -currentHost write "com.apple.systemuiserver" "menuExtras" '("/System/Library/CoreServices/Menu Extras/Clock.menu",)'
 
 #Bluetooth Menu Bar
-defaults -currentHost write "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.bluetooth" 0
+defaults -host prg write "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.bluetooth" 0
 
 #Clear Rest of Menu Bar
-defaults -currentHost write "com.apple.systemuiserver" "menuExtras" '"System/Library/CoreServices/Menue Extras/Clock.menu"'
+defaults -host prg write "com.apple.systemuiserver" "menuExtras" '"System/Library/CoreServices/Menue Extras/Clock.menu"'
 #--Finder--
 echo 'Finder/ Desktop Settings'
 sleep 2
