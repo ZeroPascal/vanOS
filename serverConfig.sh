@@ -21,7 +21,7 @@ fi
 cp ~/Desktop/temp_install/Desktop\ Backgrounds/server\ $ID.png ~/Pictures
 
 #Settings SH
-sh ~/Desktop/temp_install/settings.sh
+sh ~/Desktop/settings.sh
 
 #Computer Name
 scutil --set ComputerName mbox\ $ID
@@ -38,16 +38,13 @@ launchctl load -w /System/Library/LaunchDaemons/com.apple.smbd.plist
 
 #Static IPs
 networksetup -setmanual 'Ethernet 2' 192.168.15.$ID 255.255.255.0
-#networksetup -setmanual 'Ethernet 1' 192.168.11.$ID 255.255.255.0
+
 
 #Wi-Fi Off
 networksetup -setairportpower en2 off
 
-#Bluetooth Off
-sudo defaults write  /Library/Preferences/com.apple.Bluetooth ControllerPowerState 0
-
 #Mount and Install Mbox
-hdiutil attach ~/Desktop/temp_install/mBox\ Software/Mbox*.dmg
+# hdiutil attach ~/Desktop/temp_install/mBox\ Software/Mbox*.dmg
 while true; do
     read -p 'mBox Install Done?' yn
     case $yn in
@@ -59,24 +56,32 @@ done
 [! -d "/Applications/Mbox"] && echo 'Liar'
 
 #installer -pkg /Volumes/Mbox\ Studio\ v4.4.3\ r10342/*.pkg -target /Applications
-hdiutil detach /Volumes/Mbox*
+# hdiutil detach /Volumes/Mbox*
 
 # Do Not Disturb
 #defaults -currentHost write com.apple.notificationcenterui dndEnd 1319
 #defaults -currentHost write com.apple.notificationcenterui dndStart 1320
 #defaults -currentHost write com.apple.notificationcenterui doNotDistrub 0
 
+
+#Unmount Shared
+diskutil unmount /Volumes/share
+rm -rf ~/Desktop/temp_install
+
 #Empty Trash    
 osascript -e 'tell application "Finder" to empty trash'
+networksetup -setmanual 'Ethernet 1' 192.168.11.$ID 255.255.255.0
 
 while true; do
-    read -p "Done?" yn
+    read -p 'Restart?' yn
     case $yn in
-        [Yy]* ) diskutil unmount /Volumes/share; rm -rf ~/Desktop/temp_install; break;;
-        [Ny]*) echo 'Okay...'; exit;;
-        *) echo "Please answer yes or no"
+    [Yn]*) reboot; break;;
+    [Nn]*) exit;;
     esac
 done
+
+break
+
 
 
 
