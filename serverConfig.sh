@@ -24,11 +24,17 @@ cp ~/Desktop/temp_install/Desktop\ Backgrounds/server\ $ID.png ~/Pictures
 sh ~/Desktop/settings.sh
 
 #Computer Name
+echo "Setting Computer Name"
 scutil --set ComputerName mbox\ $ID
+sleep 3
+echo "Setting Host Name"
 scutil --set LocalHostName mbox\ $ID
+sleep 3
 
 #Disk Name
+echo "Disk Rename"
 disktuil rename / mbox\ $ID
+sleep 3
 
 #File Share
 #AFP

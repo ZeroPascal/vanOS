@@ -30,17 +30,17 @@ defaults -currentHost write "Apple Global Domain" "com.apple.sound.beep.volume" 
 defaults -currentHost delete "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.volume"
 
 #Keyboard Flag
-defaults -currentHost write "com.apple.TextInputMenu" '{visible=0;}'
+defaults -currentHost write "com.apple.TextInputMenu" "visible" "0"
 
 #Energy
-defaults -currentHost write "com.apple.systempreferences" "com.apple.preferences.energysaver" '{hasBeenWarnedAboutEnergyUsage=YES;}'
+#defaults -currentHost write "com.apple.systempreferences" "com.apple.preferences.energysaver" '{hasBeenWarnedAboutEnergyUsage=YES;}'
 
 #Screen Mirror Icon
 defaults -currentHost write "com.apple.airplay" "showInMenuBarIfPresent" '0'
 
 #Wifi Icon 
 defaults -currentHost delete "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.airport"
-defaults -currentHost write "com.apple.systemuiserver" "menuExtras" '("/System/Library/CoreServices/Menu Extras/Clock.menu",)'
+#defaults -currentHost write "com.apple.systemuiserver" "menuExtras" '("/System/Library/CoreServices/Menu Extras/Clock.menu",)'
 
 #Bluetooth Menu Bar
 defaults -currentHost delete "com.apple.systemuiserver" "NSStatusItem Visible com.apple.menuextra.bluetooth"
